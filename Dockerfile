@@ -1,7 +1,7 @@
 FROM adoptopenjdk/openjdk11:alpine
 
 ARG graphdbVersion=9.3.0   # NO SPACES !!!
-RUN echo "graphdb-free-${graphdbVersion}-dist.zip"
+RUN echo "graphdb-free-$graphdbVersion-dist.zip"
 
 
 #RUN apk add --no-cache bash
