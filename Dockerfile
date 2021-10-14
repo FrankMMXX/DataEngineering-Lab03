@@ -1,15 +1,21 @@
+# Install base image
 FROM adoptopenjdk/openjdk11:alpine
 
+# Define local variables
 ARG graphdbVersion
 #ARG graphdbVersion="9.3.0"   # NO SPACES !!!
-RUN echo "graphdb-free-${graphdbVersion}-dist.zip"
+#RUN echo "graphdb-free-${graphdbVersion}-dist.zip"
 
+# Install bash
+RUN apk update && apk add --no-cache bash
 
-#RUN apk add --no-cache bash
-#WORKDIR /opt/graphdb/dist
+# Download and unzip graphdb
+WORKDIR /opt/graphdb/dist
 ##ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
 #COPY graphdb-free-${graphdbVersion}-dist.zip .
 #RUN unzip graphdb-free-${graphdbVersion}-dist.zip
+#
+#$ Define port
 #EXPOSE 7200
 
 # TODO
