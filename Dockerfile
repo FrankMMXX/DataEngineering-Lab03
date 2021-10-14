@@ -1,6 +1,7 @@
 FROM adoptopenjdk/openjdk11:alpine
 
-ARG graphdbVersion="9.3.0"   # NO SPACES !!!
+ARG graphdbVersion
+#ARG graphdbVersion="9.3.0"   # NO SPACES !!!
 RUN echo "graphdb-free-${graphdbVersion}-dist.zip"
 
 
