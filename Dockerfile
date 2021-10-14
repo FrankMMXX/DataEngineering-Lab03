@@ -25,7 +25,7 @@ ENV PATH=$graphdbParentDirectory/bin:$PATH
 EXPOSE 7200
 
 # Define executable
-ENTRYPOINT ["graphdb"]
+ENTRYPOINT ["/opt/graphdb/dist/bin/graphdb"]
 CMD ["-Dgraphdb.home=/opt/graphdb/home -Ddefault.min.distinct.treshold=10485760"]
 
 #ENTRYPOINT [$graphdbParentDirectory/bin/graphdb]   # Pad niet nodig ivm aanpassing environment variable PATH
