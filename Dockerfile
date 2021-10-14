@@ -6,6 +6,14 @@ COPY graphdb-free-9.3.0-dist.zip .
 RUN unzip graphdb-free-9.3.0-dist.zip
 EXPOSE 7200
 
+# TODO
+# Adjust PATH environment variables.
+# Add ENTRYPOINT / CMD.
+# GRAPHDB home as parameter?
+# Docker variables gebruiken (om dubbele code te voorkomen).
+# Install unzip does not seem necessary.
+
+
 #########
 # Oud
 #########
