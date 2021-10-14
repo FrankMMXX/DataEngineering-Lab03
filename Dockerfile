@@ -19,7 +19,7 @@ RUN unzip graphdb-free-${graphdbVersion}-dist.zip && \
     mkdir home
 
 # Adjust environment variable PATH
-ENV PATH=$PATH:$graphdbParentDirectory/bin
+ENV PATH=$PATH:${graphdbParentDirectory}/bin
 
 # Define port
 EXPOSE 7200
