@@ -16,7 +16,7 @@ RUN mkdir ../home
 COPY graphdb-free-${graphdbVersion}-dist.zip .
 RUN unzip graphdb-free-${graphdbVersion}-dist.zip
 
-$ Define port
+# Define port
 EXPOSE 7200
 
 # TODO
