@@ -10,10 +10,11 @@ ARG graphdbVersion
 RUN apk update && apk add --no-cache bash
 
 # Prepare folders and files
-WORKDIR /opt/graphdb/dist
-RUN mkdir ../home
+WORKDIR /opt/graphdb
+RUN mkdir home
 #ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
 COPY graphdb-free-${graphdbVersion}-dist.zip .
+RUN mv graphdb-free-${graphdbVersion}-dist dist
 RUN unzip graphdb-free-${graphdbVersion}-dist.zip
 
 # Define port
