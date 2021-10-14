@@ -1,15 +1,15 @@
 FROM adoptopenjdk/openjdk11:alpine
 
-ARG graphdbVersion='9.3.0'   # NO SPACES !!!
+ARG graphdbVersion=9.3.0   # NO SPACES !!!
 RUN echo "graphdb-free-${graphdbVersion}-dist.zip"
 
 
-RUN apk add --no-cache bash
-WORKDIR /opt/graphdb/dist
-#ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
-COPY graphdb-free-${graphdbVersion}-dist.zip .
-RUN unzip graphdb-free-${graphdbVersion}-dist.zip
-EXPOSE 7200
+#RUN apk add --no-cache bash
+#WORKDIR /opt/graphdb/dist
+##ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
+#COPY graphdb-free-${graphdbVersion}-dist.zip .
+#RUN unzip graphdb-free-${graphdbVersion}-dist.zip
+#EXPOSE 7200
 
 # TODO
 # Adjust PATH environment variables.
