@@ -2,6 +2,7 @@
 FROM adoptopenjdk/openjdk11:alpine
 
 # Define local variables
+ARG graphdbParentDirectory="/opt/graphdb"
 ARG graphdbVersion
 #ARG graphdbVersion="9.3.0"   # NO SPACES !!!
 #RUN echo "graphdb-free-${graphdbVersion}-dist.zip"
@@ -10,12 +11,15 @@ ARG graphdbVersion
 RUN apk update && apk add --no-cache bash
 
 # Prepare folders and files
-WORKDIR /opt/graphdb
-#ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
+WORKDIR $graphdbParentDirectory
 COPY graphdb-free-${graphdbVersion}-dist.zip .
+#ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
 RUN unzip graphdb-free-${graphdbVersion}-dist.zip && \
     mv graphdb-free-${graphdbVersion} dist && \
     mkdir home
+
+# Adjust PATH environment variable
+ENV PATH=$graphdbParentDirectory/bin:$PATH
 
 # Define port
 EXPOSE 7200
