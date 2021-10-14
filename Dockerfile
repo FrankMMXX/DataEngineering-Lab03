@@ -1,5 +1,5 @@
 FROM adoptopenjdk/openjdk11:alpine
-apk add --no-cache bash
+RUN apk add --no-cache bash
 WORKDIR /opt/graphdb/dist
 #ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
 COPY graphdb-free-9.3.0-dist.zip .
