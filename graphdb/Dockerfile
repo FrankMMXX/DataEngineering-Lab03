@@ -15,7 +15,7 @@ WORKDIR $graphdbParentDirectory
 COPY graphdb-free-${graphdbVersion}-dist.zip .
 #ADD http://160.40.52.200:8084/graph-db/graphdb-free-9.3.0-dist.zip .
 RUN unzip graphdb-free-${graphdbVersion}-dist.zip && \
-    mv graphdb-free-${graphdbVersion} dist && \
+    mv graphdb-free-${graphdbVersion} dist && \   # Hernoemen (niet verplaatsen) !
     mkdir home
 
 # Adjust environment variable PATH
