@@ -10,7 +10,8 @@ EXPOSE 8080
 
 # Define environment variables
 ENV graphdb=http://graph-db:7200
-ENV bugPredictorServer=http://tosca-smell:8080/
+ENV bugPredictorServer=http://tosca-smell-predictor:8080/
+#ENV bugPredictorServer=http://tosca-smell:8080/
 ENV ansiblePath=/usr/local/tomcat/webapps/Ansibles/
 ENV reasonerServer=http://semantic-web:8080/
 ENV environment=docker
