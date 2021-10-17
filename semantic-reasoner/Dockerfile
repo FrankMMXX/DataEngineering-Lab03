@@ -15,7 +15,7 @@ ENV ansiblePath=/usr/local/tomcat/webapps/Ansibles/
 ENV reasonerServer=http://semantic-web:8080/
 
 # Define executable
-CMD ["catalina.sh", "-run"]
+CMD ["catalina.sh", "run"]
 
 #ENTRYPOINT ["catalina.sh"]
-#CMD ["-run"]
+#CMD ["run"]
